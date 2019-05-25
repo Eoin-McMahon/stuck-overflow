@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="shortcut icon" type="image/x-icon" href="/static/pageicon_YJX_icon.ico" />
+    <meta charset="utf-8">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+    <title>stuck overflow</title>
+
+  </head>
+  <body>
+  	<div id="wrapper">
+	    <header>
+				
+	    	<div id="page-banner" style="clear: both;">
+				<div class="bannerlogo">
+						<img src="/static/stuckoverflow.png" class="logo" >
+				</div>
+	    		<h1 class="title" style="font-size:80px;visibility: hidden">Stuck Overflow</h1>
+          		<p id="text">did you make an oopsie woopsie?</p>
+				<form id="add-answer" action="/search/" method="post">
+					<input class = "textBox"type="text" placeholder="Type it in here..." name="question"/>
+					<button class="search" type="submit">Search</button>
+				</form>
+
+			</div>
+		</header>
+		
+		<div class="answer">
+			<p class= "AnswerBox" id="answer">
+				{{text}}
+			</p>
+		</div>
+
+	    <div id="answer-list">
+	    	<h2 class="title">Starred Answers  <i class="far fa-bookmark" ></i></h2> 
+	    	<ul>
+	    		<li>
+	    			<span class="name">What is the difference between 'git pull' and 'git fetch'?
+                        </span>
+	    			<span class="delete">delete</span>
+	    		</li>
+	    		<li>
+	    			<span class="name">How to check whether a string contains a substring in JavaScript?
+                        </span>
+	    			<span class="delete">delete</span>
+	    		</li>
+	    		<li>
+	    			<span class="name">How do I make the first letter of a string uppercase in JavaScript?
+                            Ask Question</span>
+	    			<span class="delete">delete</span>
+	    		</li>
+	    		
+	    	</ul>
+	    </div>
+	    
+
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
