@@ -17,11 +17,11 @@ app = Flask(__name__)
 tagGet = pd.read_csv("cleantitletag.csv", encoding='ISO-8859-1')
 ansGet = pd.read_csv("cleanbodytag.csv", encoding='ISO-8859-1')
 
-tagModel = load_model("qTot.hdf5")
+tagModel = load_model("tagModel.hdf5")
 
 def getAnswer(tag):
     text_clf_svm = Pipeline([('vect', CountVectorizer()),('tfidf', TfidfTransformer()),('clf_svm', SGDClassifier())])
-    model = joblib.load("joblib.h5")
+    model = joblib.load("trained_model.h5")
     x = str(model.predict([tag]))
     return x[2:len(x)-3]
 
